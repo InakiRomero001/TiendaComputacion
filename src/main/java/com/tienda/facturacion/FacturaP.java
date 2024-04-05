@@ -1,6 +1,7 @@
 package com.tienda.facturacion;
 
-import com.tienda.carrito.Carrito;
+
+    import com.tienda.carrito.Carrito;
 import com.tienda.carrito.Item;
 import com.tienda.clientes.Cliente;
 import com.tienda.clientes.consumidor.Consumidor;
@@ -10,7 +11,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-public class Factura {
+public class FacturaP {
     private static int autoid = 1;
     private final int id;
     private final Cliente cliente;
@@ -19,10 +20,10 @@ public class Factura {
     private final LocalDate fecha;
     private final double total;
 
-    public Factura(Cliente cliente,Consumidor consumidor, Carrito carrito) {
+    public FacturaP(Cliente cliente,Consumidor consumidor, Carrito carrito) {
         this.id = autoid;
         this.cliente = cliente;
-        this.consumidor = consumidor;
+        this.consumidor= consumidor;
         this.items = carrito.getItems();
         this.fecha = LocalDate.now();
         this.total = carrito.getTotal();
@@ -64,3 +65,5 @@ public class Factura {
         }
     }
 }
+
+

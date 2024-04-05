@@ -4,21 +4,29 @@ public class Cliente {
     private static int autoid = 0;
     private final int id;
     private String nombre;
-    private String dni;
+    private boolean tipo;
     private String email;
 
-    public Cliente(String nombre, String dni) {
+    public Cliente(String nombre) {
         this.id = autoid;
         this.nombre = nombre;
-        this.dni = dni;
+    
 
         autoid++;
     }
 
-    public Cliente(String nombre, String dni, String email) {
+    public boolean isTipo() {
+        return tipo;
+    }
+
+    public void setTipo(boolean tipo) {
+        this.tipo = tipo;
+    }
+
+    public Cliente(String nombre,  String email) {
         this.id = autoid;
         this.nombre = nombre;
-        this.dni = dni;
+    
         this.email = email;
 
         autoid++;
@@ -36,14 +44,9 @@ public class Cliente {
         this.nombre = nombre;
     }
 
-    public String getDni() {
-        return dni;
-    }
+   
 
-    public void setDni(String dni) {
-        this.dni = dni;
-    }
-
+   
     public String getEmail() {
         return email;
     }
@@ -54,6 +57,6 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return String.format("%d. %s - %s", this.id, this.dni, this.nombre);
+        return String.format("%d. %s - %s", this.id, this.nombre);
     }
 }
